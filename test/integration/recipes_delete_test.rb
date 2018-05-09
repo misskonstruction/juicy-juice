@@ -1,10 +1,13 @@
 require 'test_helper'
 
-def setup
-  @user = User.create!(chefname: "mashrur", email: "mashrur@example.com")
-  @recipe = Recipe.create(name: "vegetable saute", 
+class RecipesDeleteTest < ActionDispatch::IntegrationTest
 
-            description: "great vegetable sautee, add vegetable and oil", user: @user)
+def setup
+  @user = User.create!(username: "mashrur", email: "mashrur@example.com",
+                        password: "password", password_confirmation: "password")
+  @recipe = Recipe.create(name: "vegetable saute", 
+      description: "great vegetable sautee, add vegetable and oil", user: @user)
+ 
 end
 
 test "successfully delete a recipe" do
@@ -14,7 +17,8 @@ test "successfully delete a recipe" do
   assert_difference 'Recipe.count', -1 do
     delete recipe_path(@recipe)
   end
-  assert_redirected_to recipes_path
-  assert_not flash.empty?
+    assert_redirected_to recipes_path
+    assert_not flash.empty?
+  end
 end
 
