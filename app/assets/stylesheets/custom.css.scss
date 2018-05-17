@@ -3,6 +3,18 @@ $navbar-inverse-bg: #b13b62;
 @import "bootstrap-sprockets";
 @import "bootstrap";
 
+.nav.navbar-nav.navbar-right li a {
+    color: #fff;
+}
+
+.nav.navbar-nav li a {
+    color: #fff;
+}
+
+ .navbar-inverse .navbar-nav .open .dropdown-menu>li>a,.navbar-inverse .navbar-nav .open .dropdown-menu {
+    background-color: #ffffff;
+    color:#000000;
+  }
 
 
 #logo{
@@ -188,3 +200,4 @@ h3{
     color: #fff;
   }
 }
+
