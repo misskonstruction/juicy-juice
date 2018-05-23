@@ -31,14 +31,7 @@ gem 'jbuilder', '~> 2.5'
 gem 'bcrypt', '~> 3.1.7'
 gem 'will_paginate', '3.1.0'
 gem 'bootstrap-will_paginate'
-
-# Use ActiveStorage variant
-# gem 'mini_magick', '~> 4.8'
-
-# Use Capistrano for deployment
-# gem 'capistrano-rails', group: :development
-
-# Reduces boot times through caching; required in config/boot.rb
+gem 'emoji'
 gem 'bootsnap', '>= 1.1.0', require: false
 
 group :development, :test do
