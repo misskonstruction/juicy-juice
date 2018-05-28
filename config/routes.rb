@@ -1,6 +1,6 @@
 Rails.application.routes.draw do
    root "pages#home"
-   get 'pages/home', to: 'pages#home'
+    get 'pages/home', to: 'pages#home'
    
    resources :recipes do
     resources :comments, only: [:create]
@@ -16,4 +16,7 @@ Rails.application.routes.draw do
    resources :ingredients, except: [:destroy]
    
    mount ActionCable.server => '/cable'
+   get '/chat', to: 'chatrooms#show'
+   
+   resources :messages, only: [:create]
 end

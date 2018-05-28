@@ -1,6 +1,6 @@
 class CommentsController < ApplicationController
   before_action :require_user
-  
+ 
   def create
     @recipe = Recipe.find(params[:recipe_id])
     @comment = @recipe.comments.build(comment_params)
@@ -11,7 +11,7 @@ class CommentsController < ApplicationController
       #redirect_to recipe_path(@recipe)
     else
       flash[:danger] = "Comment was not created"
-      redirect_to :back
+      redirect_back(fallback_location: root_path)
     end
   end
   
