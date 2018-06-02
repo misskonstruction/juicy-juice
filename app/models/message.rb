@@ -5,6 +5,6 @@ class Message < ApplicationRecord
   
   
   def self.most_recent
-    order(:created_at).last(30)
+    order(:created_at).last(60)
   end
 end
